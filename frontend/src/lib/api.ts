@@ -4,7 +4,11 @@ import type {
   ForecastResponse, HealthResponse,
 } from "@/types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api/v1";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  (process.env.NODE_ENV === "production"
+    ? "https://terrasense-ai-op11.onrender.com/api/v1"
+    : "http://localhost:8000/api/v1");
 
 class ApiError extends Error {
   status: number;
