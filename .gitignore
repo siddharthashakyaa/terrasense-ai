@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.db
+
+# Backend artifacts
+backend/app/models/*.joblib
+backend/app/models/*.json
+backend/data/*.csv
+backend/data/uploads/
+!backend/app/models/.gitkeep
+!backend/data/.gitkeep
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+frontend/.env.local
+npm-debug.log*
+
+# Env files
+.env
+*.env.local
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

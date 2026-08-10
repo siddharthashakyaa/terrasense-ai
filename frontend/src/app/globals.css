@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 25% 97%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 220 20% 93%;
+  --muted-foreground: 220 10% 40%;
+  --primary: 152 60% 40%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 200 90% 50%;
+  --accent-foreground: 0 0% 100%;
+  --success: 152 60% 40%;
+  --warning: 38 92% 50%;
+  --danger: 0 72% 51%;
+  --border: 220 15% 88%;
+  --radius: 14px;
+}
+
+.dark {
+  --background: 222 47% 6%;
+  --foreground: 210 20% 92%;
+  --card: 222 40% 9%;
+  --card-foreground: 210 20% 92%;
+  --muted: 222 30% 14%;
+  --muted-foreground: 220 10% 65%;
+  --primary: 152 65% 48%;
+  --primary-foreground: 222 47% 6%;
+  --accent: 200 90% 55%;
+  --accent-foreground: 222 47% 6%;
+  --success: 152 65% 48%;
+  --warning: 38 92% 55%;
+  --danger: 0 80% 62%;
+  --border: 222 25% 18%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Subtle premium background: soft radial gradients, not loud */
+.app-bg {
+  background-image:
+    radial-gradient(circle at 15% 0%, hsl(var(--primary) / 0.10), transparent 40%),
+    radial-gradient(circle at 85% 10%, hsl(var(--accent) / 0.10), transparent 40%);
+}
+
+/* Glassmorphism - used subtly for cards on top of the gradient background */
+.glass {
+  background: hsl(var(--card) / 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid hsl(var(--border) / 0.6);
+}
+
+.glass-strong {
+  background: hsl(var(--card) / 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--muted-foreground) / 0.3); border-radius: 999px; }
+
+.leaflet-container {
+  border-radius: var(--radius);
+  z-index: 0;
+}
